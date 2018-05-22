@@ -64,12 +64,12 @@ myApp.controller('userController', ['$location', '$rootScope', 'accountService',
 					username: temp,
 					token: res.data.token
 				};
-				console.log(tokn);
+				console.log(token);
 				var userinfo = jwtHelper.decodeToken(res.data.token);
 
 				console.log(userinfo);
 				localStorage.setItem('username', userinfo.firstName + ' ' + userinfo.lastName);
-				localStorage.setItem('currentUser', JSON.stringify(tokn));
+				localStorage.setItem('currentUser', JSON.stringify(token));
 				$location.path('/dashboard');
 			}
 		},

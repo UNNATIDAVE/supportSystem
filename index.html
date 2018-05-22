@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="supportSystem">
+
+	<head>
+		<title>Support System</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="keywords" content="support, support system, tcket based support system, ticket support system">
+	    <meta name="description" content="By using this single page Application, You can upload, edit, delete your queries and you can get the answsers from admin for your queries.">
+		
+		<!-- Links Style -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600|Raleway:600,300|Josefin+Slab:400,700,600italic,600,400italic'
+		    rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+		 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
+		<link rel="stylesheet" type="text/css" href="public/css/style.css">
+		<!-- <link rel="stylesheet" href="public/css/blog-home.css">
+		<link rel="stylesheets" href="public/css/main.css"> -->
+
+	</head>
+
+	<body >
+
+		<div ng-view>	</div>
+
+		<!-- Footer Start-->
+	    <footer>
+	      <div class="container-fluid">
+	        <div class="row">
+	          <div class="col-sm-12 col-md-12 col-lg-12" id="social-networks">
+		  	  	<a href="mailto:unnatidave11@gmail.com" class="support">Contact Us</a>
+		  	 	<a href="https://github.com/UNNATIDAVE/support-system" class="support" target="_blank"> Source Code</a>
+		  		<a href="https://github.com/UNNATIDAVE" class="support" target="_blank"><i class="fa fa-github"></i> gitHub</a> 
+				<a href="https://www.linkedin.com/in/unnati-dave-69b74787/" class="support" target="_blank"><i class="fa fa-linkedin"></i></a>
+	    	  </div>
+	    	  <div class="col-sm-12 col-md-12 col-lg-12" id="footer-copyright">
+				<p>Copyright © Ticket Based Support System single page Application by unnatidave </p>
+	    	  </div>
+	        </div>
+	      </div>
+		</footer>
+	  	<!-- Footer End -->	
+
+	  	<!-- JavaScript Files -->
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js"></script>
+		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.3.0/mixitup.js" ></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.min.js"></script>
+		<script type="text/javascript" src="https://cdn.rawgit.com/auth0/angular-jwt/master/dist/angular-jwt.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/danialfarid-angular-file-upload/12.2.13/ng-file-upload.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/danialfarid-angular-file-upload/12.2.13/ng-file-upload-shim.min.js"></script>
+
+		<!-- Internal JS Files -->
+		<script src="controllers/app.js"></script>
+		<script src="modules/route.js"></script>
+		
+		<!--Angular Services-->
+		<script src="service/indexService.js"></script>
+		<script src="service/ticketService.js"></script>
+
+		<!--Angular Controllers-->
+		<script src="controllers/navigation.js"></script>
+		<script src="controllers/userController.js"></script>
+		<script src="controllers/indexController.js"></script>
+		<script src="controllers/singleticketController.js"></script>
+		<script src="controllers/ticketController.js"></script>
+
+	</body>
+
+</html>

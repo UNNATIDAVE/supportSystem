@@ -1,0 +1,122 @@
+
+<!--SERVICE START-->
+	<div id="service" class="section-padding">
+		<div class="container">
+			<div class="row">
+				<div class="heading">
+					<h1>Welcome To Support System </h1>
+					<h3>Ticket Based Support system</h3>
+				<hr/>
+				</div>
+				<div class="col-md-6 col-lg-6">
+						<img src="./../public/imgs/services.png" class="img-responsive" style="width: 150px; height: 100px;">
+						<h3>1. Create ticket for an issue and get it solved</br>
+						    2. Discuss your query with admin</br>
+						    3. Get the solutions for your queries from the admin panel</h3>
+				</div>
+				<div class="col-md-6 col-lg-6">
+				        <form id="login-form" ng-submit="account.login()">
+				          <img src="./../public/imgs/login.png" class="img-responsive" style="width: 250px; height: 100px;">
+				          <input type="email" id="login_username" ng-model="account.email" placeholder="Email" required class="form-control input-lg"/> 
+				          <input type="password" id="login_password" ng-model="account.password" class="form-control input-lg" id="password" placeholder="Password" required="" />
+				          <button type="submit" name="go" class="btn btn-lg btn-primary btn-block">Sign in</button>
+				          <div class="form-links">
+				            <button type="button" id="reg" class="btn btn-info btn-sm" data-toggle="modal" data-target="#reg-modal" >Create account</button> or 
+				            <button type="button" id="forpass" class="btn btn-info btn-sm" data-toggle="modal" data-target="#main-modal">Forgot Password??</button>
+				          </div>
+				        </form> 					
+				</div>
+			</div>
+		</div>
+
+		<!-- Modal classes for forgot pass and register -->
+		<div class="modal fade" id="main-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+	    style="display: none;">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header" align="center">
+						<button type="button" id="close" class="close" data-dismiss="modal" aria-label="Close">
+							<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+						</button>
+					</div>
+					<!--header end-->
+					<!-- Begin # DIV Form -->
+					<div id="div-forms">
+			
+						<!-- forgot Password Form -->
+						<form id="forgot_pass" ng-submit="account.forgotPass()">
+							<div class="modal-body">
+								<div id="div-lost-msg">
+									<div id="icon-lost-msg" class="glyphicon glyphicon-chevron-right"></div>
+									<span id="text-lost-msg">Your E-mail:</span>
+								</div>
+								<input id="lost_email" ng-model="account.email" class="form-control" type="text" placeholder="E-Mail" required>
+							</div>
+							<div class="modal-footer">
+								<div>
+									<button type="submit" id="lost" class="btn btn-primary btn-lg btn-block">Send</button>
+								</div>
+								<div>
+									<button data-dismiss="modal" type="button" class="btn btn-link">Log In</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="reg-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+	    style="display: none;">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header" align="center">
+						<button type="button" id="close" class="close" data-dismiss="modal" aria-label="Close">
+							<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+						</button>
+					</div>
+					<!--header end-->
+					<!-- Begin # DIV Form -->
+					<div id="div-forms">
+			
+						<!-- End forgot Password Form -->
+
+						<!-- Begin | Register Form -->
+						<form id="register" ng-submit=account.register()>
+							<div class="modal-body">
+								<div ng-show="account.error">
+									<div id="div-register-msg" style="background-color:#E57373">
+										<span>{{account.registerMessage}}</span>
+									</div>
+								</div>
+								<div ng-hide="account.error">
+									<div id="div-register-msg" style="background-color:#4CAF50">
+										<span>{{account.registerMessage}}</span>
+									</div>
+								</div>
+								<input id="register_firstname" ng-model="account.firstname" class="form-control" type="text" placeholder="First Name" required>
+								<input id="register_lastname" ng-model="account.lastname" class="form-control" type="text" placeholder="Last Name" required>
+								<input id="register_email" ng-model="account.email" class="form-control" type="text" placeholder="E-Mail" required>
+								<input id="register_mobile" ng-model="account.mobile" class="form-control" type="text" placeholder="Mobile" required>
+								<input id="register_password" ng-model="account.password" class="form-control" type="password" placeholder="Password" required>
+							</div>
+							<div class="modal-footer">
+								<div>
+									<button type="submit" id="registerForm" class="btn btn-primary btn-lg btn-block">Register</button>
+									<br>
+									
+								</div>
+								<div>
+									<button data-dismiss="modal" type="button" class="btn btn-link">Log In</button>
+								</div>
+							</div>
+						</form>
+						<!-- End | Register Form -->
+
+					</div>
+					<!-- End # DIV Form -->
+				</div>
+			</div>  <!--End Modal -->
+		</div>
+	</div>
+
+	<!--SERVICE END-->

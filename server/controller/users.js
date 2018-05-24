@@ -132,7 +132,7 @@ userRouter.post('/login', function(req, res){
 					var payload = result.toObject();
 					delete payload.password;
 					var token =  jwt.sign(payload, config.secret,{
-						expiresIn: 30 * 60
+						expiresIn: 45 * 60
 					});
 					res.json({
 						error: false,

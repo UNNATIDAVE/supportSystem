@@ -1,0 +1,22 @@
+<navigation></navigation>
+	<br><br><br><br><br>
+
+<div class="container">
+
+	<form ng-submit="add.addTicket()" class="addti">
+			<div class="form-group">
+				<label for="exampleInputEmail1" class="title">Title</label>
+				<input type="text" class="form-control" ng-model="add.title" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Title" required>
+			</div>
+			<div class="form-group">
+				<label for="exampleTextarea" class="title">Desription</label>
+				<textarea class="form-control" ng-model="add.description" id="exampleTextarea" rows="3" required></textarea>
+			</div>
+			<div class="form-group">
+				<label for="exampleInputFile" class="title" style="float: left;">File input</label><br><br>	
+				<input type="file" ngf-select ng-model="add.file" name="file" ngf-max-size="20MB" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+				<p>{{add.progress}} </p>
+			</div>
+			<button type="submit" class="btn btn-primary btn-lg">Submit</button>
+	</form>		<!-- form end -->
+</div>			<!-- Contaainer End -->

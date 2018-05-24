@@ -2,26 +2,22 @@ myApp.controller('userController', ['$location', '$rootScope', 'accountService',
 
 	var main = this;
 
-	this.loginMsg = "Login to your Account";
 	this.registerMsg = "Create an account";
-	this.changePass = "Enter a new password";
-	this.uniqueMsg = "Enter Unique String";
+	this.changePassword = "password change successfully";
 	this.error = "";
 	this.firstName = "";
 	this.lastName = "";
 	this.email = "";
 	this.mobile = "";
 	this.password = "";
-	this.res="";
+	this.response="";
 	this.registerForm = "";
-	this.otp = "";
-	this.check = "";
 	this.newPass = "";
-	this.newPass1 = "";
 	$rootScope.show = false;
 	this.closeButton = "";
 
 	this.register = function(){
+		 console.log(main.email);
 		var data = {
 			firstName : main.firstName,
 			lastName : main.lastName,
@@ -29,19 +25,25 @@ myApp.controller('userController', ['$location', '$rootScope', 'accountService',
 			mobile: main.mobile,
 			password : main.password
 		};
+		console.log("data successCallback" + data);
 
-		accountService.register(data).then(function successCallBack(res){
-			main.error = res.data.error;
-			main.registerMsg = res.data.message;
-		}, function errorCallback(res){
-			alert("Some error Occured");
-		});
-		this.firstName = "";
-		this.lastName = "";
-		this.email = "";
-		this.mobile = "";
-		this.password = "";
-	};
+		accountService.register(data).then(function successCallback(response) {
+            console.log(response.data.error);
+            console.log(response.data.message);
+            main.error = response.data.error;
+            main.registerMessage = response.data.message;
+
+        }, function errorCallback(response) {
+            alert("Some error Occured");
+        });
+        this.firstname = "";
+        this.lastname = "";
+        this.email = "";
+        this.mobile = "";
+        this.password = "";
+
+    }; // end register module
+
 
 	this.login = function(){
 		var temp = main.email;
@@ -54,7 +56,6 @@ myApp.controller('userController', ['$location', '$rootScope', 'accountService',
 			main.error = res.data.error;
 			main.loginMsg = res.data.message;
 			if(res.data.error){
-				console.log("Error");
 				alert("Please Enter valid mail ID");
 			}	
 			else{
@@ -83,45 +84,19 @@ myApp.controller('userController', ['$location', '$rootScope', 'accountService',
 
 	this.forgotPass = function(){
 		var data = {
-			email: main.email
+			email: main.email,
+			password: main.newPass
 		};
-
-		accountService.forgotPassword(data).then(function successCallBack(res){
-			main.email = "";
+		accountService.forgotPass(data).then(function successCallBack(res){
+			 console.log(res.data.error);
+            console.log(res.data.message);
+            main.error = res.data.error;
+            main.changePass = res.data.message;
 		}, function errorCallback(res){
 			console.log(data);
 		});
-	};
-
-	this.verifyUnique = function(){
-		var otp = main.otp;
-		accountService.verifyUnique(otp).then(function successCallBack(res){
-			main.check = res.data.error;
-			main.uniqueMsg = res.data.message;
-			main.otp = "";
-		}, function errorCallback(res){
-			console.log(res.data);
-		});
-	};
-
-	this.resetPassword = function(){
-		if(this,newPass != this.newPass1){
-			alert("Password didn't match");
-			main.newPass = "";
-			main.newPass1 = "";
-		}
-		else{
-			var data = {
-				password: main.newPass
-			};
-			accountService.resetPassword(data).then(function successCallBack(res){
-				main.changePass = res.data.message;
-				main.newPass = "";
-				main.newPass1 = "";
-			}, function errorCallback(res){
-				console.log(res);
-			});
-		}
+		this.email = "";
+        this.newPass = "";
 	};
 
 	this.logOut = function(){

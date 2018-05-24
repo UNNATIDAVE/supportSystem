@@ -1,9 +1,9 @@
 body{
-  width: 100%;
-  height: 200px;
+  max-width: 100%;  
   background-image: url("./../imgs/backmain.jpg");
   background-repeat: no-repeat;
-  background-size: 100% 325%;
+  background-size: 100%;
+  background-attachment: fixed;
 }
 
 body,h1,h2,h3,h4,h5,h6{
@@ -12,23 +12,57 @@ body,h1,h2,h3,h4,h5,h6{
   color: white;
 }
 
+/* Home page form style*/
+form{
+    color: #5d5d5d;
+    background: #9fbff2;
+    padding: 1%;
+}
+form img {        
+    margin: 0 auto;
+    margin-bottom: 1%;
+}
+form input,
+form button {
+    font-size: 18px;
+    margin: 10px 0;
+}
+form div{
+    text-align: center;
+    padding-top: 15px;
+}
+.form-links a {
+    color: #032760;
+    font-size: 18px;
+} /* End form style */
+.bt{
+  text-align: center;
+}
+.details{
+  padding-left: 5%; 
+  padding-bottom: 2%; 
+  padding-right: 1%;
+}
+.chat-body{
+  color:black;
+}
+.card{
+padding-left: 6%; 
+}
 .heading{
     text-align: center;
     padding-top: 2%;
 }
-.details{
-    padding-left: 12%;
+.title{
+  font-size: 1.5em;
+  color: white;
 }
-.addTicket{
-    height: 100px;
-    width: 100px;
 
-}
 /* TopNav style */
 .topnav{
   font-size: 16px;
   border-bottom: 1px outset rgba(192,192,192,0.5);
-  background: transparent;
+  background: white;    
   box-shadow: 0px 1px rgba(0,0,0,0.3);
 }
 
@@ -51,119 +85,12 @@ body,h1,h2,h3,h4,h5,h6{
   background: rgba(255,255,255,0.5);
   color: #000;
 }
-/* Home page style */ 
-
-@media(min-width: 767px){
-  ul .intro-social-buttons > li{
-    display: block;
-    margin-bottom: 20px;
-    padding: 0;
-  }
-
-  ul.intro-social-buttons > li:last-child {
-        margin-bottom: 0;
-    }
-}
-
-.btn {
-  display: inline-block;
-  color: #000;
-  border: 2px outset rgba(0, 0, 0, 0.9);
-  background: #C0C0C0;
-  text-shadow: 1px 1px 1px rgba(0,0,0, 20);
-  box-shadow: 3px 3px 3px rgba(0,0,0,0.5);
-  letter-spacing: 2px;
-  transition: 0.2s;
-}
-
-.btn:hover {
-     color: #fff;
-  border: 2px outset rgba(0, 0, 0, 0.9);
-  background: rgba(0,0,0, 0.9);
-  transform:scale(1.1);
-  transition: 0.2s;
-  text-shadow: 1px 1px 1px rgba(0,0,0, 20);
-  box-shadow: 3px 3px 3px rgba(0,0,0,0.5);
-  letter-spacing: 2px;
-}
-
-/* 2nd pages style */
-.content-section-ap {
-    padding: 50px 0;
-    background: url('https://pre00.deviantart.net/bb4c/th/pre/f/2011/310/e/6/game_of_thrones_inspiered_background_by_ivegotswagger-d4fa1dz.jpg') no-repeat center center fixed;
-    background-size: cover;
-    width: 100%;
-}
-
-/* 3rd pages style */
-.content-section-sp {
-  padding: 50px 0;
-  background: url('http://backgrounds4k.net/wp-content/uploads/2016/01/Game-of-Thrones-background.jpg') no-repeat center center fixed;
-  background-size: cover;
-  width: 100%;
-}
-
-/* Search boxes style */
-.searchbox
-{
-  width: 50%;
-  margin-left: 20%;
-  font-size: 2vmin;
-  height:2.5em;
-}
-
-.hh{
-     height:2.5em;
-     margin-left: 20%;
-     margin-right: 20%;
-}
-.abtn{
-  margin-right: 20%;
-  margin-left: 20%;
-}
-@media only screen and (max-width: 400px) {
-  .searchbox{
-    margin-left: 20%;
-  }
-}
-
-#books * {
-  z-index: 2;
-}
-/* links style */
-.link{
-font-family: Kavivanar;
-color: #59018c;
-font-size: 3vmin;
-}
-
-/* Back to top buttton style */
-#myBtn {
-    display: none; 
-    position: fixed; 
-    bottom: 20px; 
-    right: 30px; 
-    z-index: 99; 
-    border: none; 
-    outline: none; 
-    background-color: black; 
-    color: white; 
-    cursor: pointer; 
-    padding: 15px; 
-    border-radius: 10px; 
-    font-size: 18px; 
-}
-
-#myBtn:hover {
-    background-color: #555; 
-}
 
 /* Footer style */
 footer {
-    padding: 50px 0;
     width: 100%;
+    padding: 50px 0 1% 0;
     background-color: transparent;
-    padding-bottom: 0;
     text-align: center;
     font-family: 'Cinzel Decorative', cursive;
 }
@@ -184,96 +111,6 @@ footer #social-networks a{
 
 footer #social-networks .support:hover{
   color: black;
-}
-
-
-/* form style*/
-form{
-    color: #5d5d5d;
-    background: #9fbff2;
-    padding: 1%;
-}
-    form img {
-        
-        margin: 0 auto;
-        margin-bottom: 1%;
-    }
-    form input,
-    form button {
-        font-size: 18px;
-        margin: 10px 0;
-    }
-    form div{
-        text-align: center;
-        padding-top: 15px;
-    }
-    
-    .form-links a {
-        color: #032760;
-    font-size: 18px;}
-
-
-
-    /* Modal style*/
-
-/*    #login-modal .modal-dialog {
-    width: 350px;
-}
-
-#login-modal input[type=text], input[type=password] {
-    margin-top: 10px;
-}
-
-#div-login-msg,
-#div-lost-msg,
-#div-register-msg {
-    border: 1px solid #dadfe1;
-    height: 30px;
-    line-height: 28px;
-    transition: all ease-in-out 500ms;
-}
-
-#div-login-msg.success,
-#div-lost-msg.success,
-#div-register-msg.success {
-    border: 1px solid #68c3a3;
-    background-color: #c8f7c5;
-}
-
-#div-login-msg.error,
-#div-lost-msg.error,
-#div-register-msg.error {
-    border: 1px solid #eb575b;
-    background-color: #ffcad1;
-}
-
-#icon-login-msg,
-#icon-lost-msg,
-#icon-register-msg {
-    width: 30px;
-    float: left;
-    line-height: 28px;
-    text-align: center;
-    background-color: #dadfe1;
-    margin-right: 5px;
-    transition: all ease-in-out 500ms;
-}
-
-#icon-login-msg.success,
-#icon-lost-msg.success,
-#icon-register-msg.success {
-    background-color: #68c3a3 !important;
-}
-
-#icon-login-msg.error,
-#icon-lost-msg.error,
-#icon-register-msg.error {
-    background-color: #eb575b !important;
-}
-
-#img_logo {
-    max-height: 100px;
-    max-width: 100px;
 }
 
 /* #########################################
@@ -307,10 +144,6 @@ form{
     padding: 15px 15px 15px 15px;
     text-align: left;
     border-top: 0px;
-}
-
-.checkbox {
-    margin-bottom: 0px;
 }
 
 .btn {

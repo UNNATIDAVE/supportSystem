@@ -1,0 +1,78 @@
+<navigation></navigation>
+<br><br><br><br><br>
+
+<div class="container">
+    <div class="row">
+        
+        <!-- Ticket Details -->
+        <p style="float: right;">Posted on : {{single.ticket.created | date:"MMM d, y h:mm a"}}</p>
+        <h3><u>Ticket<u></h3>
+            
+            <div class="details">
+                <h4>Title ID:</h4>
+                <h5 class="card">{{single.ticket.ticketId}}</h5>
+                <br>
+                <h4>Title :</h4>
+                <h5 class="card">{{single.ticket.title}}</h5>
+                <br>
+                <h4>Description :</h4>
+                <p class="card">{{single.ticket.description}}</p>
+                <br>
+                <h4>Attachments:</h4>
+                <a href="./user/download/{{single.ticket.filename}}">{{single.ticket.filename}}</a>
+            </div>
+            <div class="bt">
+                <button type="button" class="btn btn-success " ng-click="single.changeStatus(single.ticket.ticketId)">Close</button>
+                <button type="button" class="btn btn-danger" ng-click="single.deleteTicket(single.ticket.ticketId)">Delete</button>
+            </div>      <!-- End ticket details-->
+    </div>      <!-- End row-->
+
+        <br>
+        <!-- Chat message-->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading" id="accordion">
+                        <span class="glyphicon glyphicon-comment"></span> Chat
+                        <div class="btn-group pull-right">
+                        </div>
+                    </div>
+                    <div id="collapseOne">
+                        <div class="panel-body">
+                            <ul class="chat">
+                                <div ng-repeat="message in single.ticket.messages">
+                                    <li class="left clearfix">
+                                        <div class="chat-body clearfix">
+                                            <div class="header">
+                                                <strong class="primary-font">{{message.sender}}:</strong>
+                                                <small class="pull-right text-muted">
+                                                    <span class="glyphicon glyphicon-time "></span>{{message.created | date:"MMM d, y h:mm a"}}</small>
+                                            </div>
+                                            <p class="card">
+                                                {{message.message}}
+                                            </p>
+                                        </div>
+                                    </li>
+                                </div>
+                            </ul>
+                        </div>
+                        <div class="panel-footer">
+                            <form ng-submit="single.checkAdmin(single.ticket.ticketId)">
+                                <div class="input-group">
+
+                                    <input id="btn-input" type="text" style="height:50px" ng-model="single.message" class="form-control input-sm" placeholder="Type your message here..."
+                                        required/>
+                                    <span class="input-group-btn">
+                                        <button type="submit" style="height:50px" class="btn btn-warning btn-sm" id="btn-chat">
+                                            Send
+                                        </button>
+                                    </span>
+
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

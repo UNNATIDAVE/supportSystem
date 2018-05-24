@@ -33,8 +33,8 @@ myApp.config(['$routeProvider', '$locationProvider', 'jwtInterceptorProvider', f
 			controllerAs: 'main'
 		})	
 
-		.when('/ticketView/:ticketId', {
-			templateUrl: 'views/singleTicket.html',
+		.when('/ticket/:ticketId', {
+			templateUrl: '/views/singleTicket.html',
 			controller: 'singleTicket',
 			controllerAs: 'single',
 			resolve: {

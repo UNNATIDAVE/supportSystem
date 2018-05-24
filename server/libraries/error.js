@@ -1,10 +1,10 @@
-exports.generate = function(err, message, status, data){
-	var myRes = {
+module.exports.generate = function(error, message, status, data){
+	var myResponse = {
 
-		err : error,
+		error : error,
 		message : message,
 		status : status,
 		data : data
 	};
-	return myRes;
+	return myResponse;
 }

@@ -9,8 +9,8 @@ module.exports.auth = function(req, res, next){
 	if(token){
 		jwt.verify(token, config.secret, function(err, decoded){
 			if(err){
-				var res = resGen.generate(true, "Failed to Authenticate", 403, null);
-				res.json(res);
+				var response = resGen.generate(true, "Failed to Authenticate", 403, null);
+				res.json(response);
 			}
 			else{
 				req.user = decoded;
@@ -23,6 +23,8 @@ module.exports.auth = function(req, res, next){
 		return res.status(403).send({
 			success: false,
 			message: "No Token provided...."
+
 		});
+		console.log("no oken provided");
 	}
 };

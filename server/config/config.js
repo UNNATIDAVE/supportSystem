@@ -1,6 +1,4 @@
 module.exports = {
-    'db': 'mongodb://localhost/ticketSupport',
+    'db': 'mongodb://localhost/supportData',
     'secret': '$upp@r!',
-    'username': '',
-    'pass': ''
-}
+    }

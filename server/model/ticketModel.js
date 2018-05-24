@@ -5,13 +5,13 @@ var Schema = mongoose.Schema;
 var ticketSchema = new Schema({
 
 	ticketId : { type : String },
-	userName : { type : String },
+	username : { type : String },
 	email : { type : String },
 	title : { type : String },
 	description : { type : String },
 	status : { type: String, default : 'open' },
-	fileName : { type : String },
-	message : [{
+	filename : { type : String },
+	messages : [{
 		sender: { type : String },
 		message: { type : String },
 		created: { type : Date, default : Date.now }
@@ -19,4 +19,4 @@ var ticketSchema = new Schema({
 	created: { type : Date,	default : Date.now }
 });
 
-mongoose.model('ticket', ticketSchema);
+var ticketModel = module.exports = mongoose.model('ticketModel', ticketSchema);

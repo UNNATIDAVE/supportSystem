@@ -4,11 +4,11 @@ var Schema = mongoose.Schema;
 
 var userSchema = new Schema({
 
-	firstName : { type: String, default: '', required: true },
+	firstName : { type: String},
 	lastName : { type: String },
-	password: { type: String }, 
-	email : { type: String },
-	mobile : { type: String }
+	email: { type: String },
+    mobile: { type: String },
+    password: { type: String }
 });
 
-mongoose.model('user', userSchema);
+var userModel = module.exports = mongoose.model('userModel', userSchema);

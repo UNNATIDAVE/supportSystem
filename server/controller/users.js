@@ -25,7 +25,7 @@ eventEmitter.on('welcomeMessage', function(data){
             from: 'testecommerce98@gmail.com',
             to: data.email,
             subject: 'Welcome to Support System',
-            html: '<h2>Hi'+data.firstName +',</h2><h2> Thank you for choosing us.</h2> <h4> We provide you the best support service </h4>'
+            html: '<h2>Hi ' + data.firstName + ',</h2><h2> Thank you for choosing us.</h2> <h4> We provide you the best support service </h4>'
         };
 
         transporter.sendMail(mailOptions, function(err, info){

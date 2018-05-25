@@ -28,7 +28,7 @@ app.use(session({
 
 // Database connection
 mongoose.connect(config.db);
-var db = mongoose.connection
+var db = mongoose.connection;
 
 db.once('open', function(){
 	console.log("Database connected successfully");

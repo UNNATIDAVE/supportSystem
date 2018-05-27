@@ -25,6 +25,6 @@ module.exports.auth = function(req, res, next){
 			message: "No Token provided...."
 
 		});
-		console.log("no oken provided");
+		console.log("no Token provided");
 	}
 };
